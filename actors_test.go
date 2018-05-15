@@ -31,7 +31,7 @@ var _ observation.Observable = (*ObservableActor)(nil)
 func (o *ObservableActor) Receive(ctx actor.Context) {
 	switch m := ctx.Message().(type) {
 	case string:
-		o.t.Logf("observable - recieved %s", m)
+		o.t.Logf("observable - received %s", m)
 		o.data = m
 		o.Notify(o.data)
 	}
